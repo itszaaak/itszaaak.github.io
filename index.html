@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Itszaaak</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <h1>CCCCCCccccc</h1>
-    <h2>hello test </h2>
-    <h3>test test</h3>
+    <header>
+        <div class="container">
+            <h1>Itszaaak</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="language-selector">
+                    <select onchange="window.location.href=this.value;">
+                        <option value="/fr/" lang="fr">Français</option>
+                        <option value="/en/" lang="en">English</option>
+                        <option value="/it/" lang="it">Italiano</option>
+                    </select>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="video-section">
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="img/3556164-hd_1920_1080_18fps.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="overlay">
+                <h2>Because life is too short to not be lived</h2>
+                <p>Des services, des conseils, un blog, et bien plus.</p>
+                <a href="#services" class="cta-button">Découvrir</a>
+            </div>
+        </section>
+    </main>    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Itszaaak. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#">Youtube</a>
+                <a href="#">TikTok</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
