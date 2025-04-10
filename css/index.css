@@ -1,54 +1,73 @@
-/* SECTION VIDÉO */
-.video-section {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  /* Vidéo plein écran */
-  .background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 0;
-    filter: brightness(50%)
-  }
-  
- 
-  
-  /* Contenu au centre de l'écran */
-  .overlay {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    padding: 0 20px;
-  }
- 
-  
-  .cta-button {
-    display: inline-block;
-    margin-top: 450px;
-    padding: 12px 24px;
-    background-color: #ff6600;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cta-button:hover {
-    background-color: #e65c00;
-  }
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+.terminal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #000;
+  color: #00ff91;
+}
+
+.terminal-text p {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid #00ff91;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.terminal-text p:nth-child(2) {
+  animation-delay: 2.2s;
+}
+.terminal-text p:nth-child(3) {
+  animation-delay: 4.4s;
+}
+
+.terminal-text p {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  from { width: 0; opacity: 1; }
+  to { width: 100%; opacity: 1; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #00ff91; }
+}
+
+.highlight {
+  color: #ffffff;
+}
+
+.terminal-command {
+  cursor: pointer;
+  border-bottom: 1px dashed #00ff91;
+  transition: color 0.3s ease;
+}
+
+.terminal-command:hover {
+  color: #00ff91;
+}
+
+.about{
+  width: 100%;
+  height: 100vh;
+}
+.services{
+  width: 100%;
+  height: 100vh;
+  background-color: bisque;
+}

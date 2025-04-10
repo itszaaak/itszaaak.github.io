@@ -1,0 +1,146 @@
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background-color: #000;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  header.scrolled {
+    background-color: #fff;
+    color: #000;
+  }
+
+  
+  header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .language-selector select {
+    background: #000000;
+    color: inherit;
+    border: 1px solid currentColor;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .language-selector select.scrolled{
+    background-color: #fff;
+  }
+
+  /* Style général pour le footer */
+footer {
+    background-color: #121212;  /* Fond sombre */
+    color: #ffffff;  /* Texte en blanc */
+    padding: 2rem 1.5rem;  /* Espacement */
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace; /* Typographie moderne, type terminal */
+}
+
+/* Conteneur du footer */
+.footer-container {
+    max-width: 1200px;  /* Largeur maximale */
+    margin: 0 auto;  /* Centrer le contenu */
+}
+
+/* Nom de la marque */
+.footer-container .brand-name {
+    font-weight: bold;
+    color: #00ff91;  /* Une couleur verte fluo pour attirer l'attention sur la marque */
+}
+
+/* Liens des réseaux sociaux */
+.social-links {
+    margin-top: 1rem;  /* Espacement au-dessus des liens sociaux */
+}
+
+.social-links a {
+    text-decoration: none;  /* Enlever la décoration du texte (soulignement) */
+    color: #ffffff;  /* Couleur des liens en blanc */
+    margin: 0 1rem;  /* Espacement entre les liens */
+    font-size: 1.2rem;  /* Taille des caractères des liens */
+    transition: color 0.3s ease-in-out;  /* Transition fluide pour le changement de couleur */
+}
+
+/* Effet au survol des liens sociaux */
+.social-links a:hover {
+    color: #00ff91;  /* Changer la couleur au survol */
+}
+
+/* Ajouter une ligne de séparation au-dessus du footer */
+footer::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;  /* Largeur de la ligne */
+    background-color: #444444;  /* Couleur gris foncé pour la ligne */
+    margin: 0 auto 1rem;  /* Centrer la ligne et espacement */
+}
+
+
+
+
+
+  
+  /* ======================== */
+  /* RESPONSIVE NAVBAR */
+  /* ======================== */
+  @media (max-width: 768px) {
+    header .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  

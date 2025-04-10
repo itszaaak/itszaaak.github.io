@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Itszaaak</title>
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/nav-footbar.css">
 </head>
 <body>
     <header>
@@ -23,25 +24,40 @@
                         <option value="/it/" lang="it">Italiano</option>
                     </select>
                 </div>
+                <div class="burger-menu" id="burger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </nav>
         </div>
     </header>
     <main>
-        <section class="video-section">
-            <video autoplay muted loop playsinline class="background-video">
-                <source src="img/3556164-hd_1920_1080_18fps.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la vidéo.
-            </video>
-            <div class="overlay">
-                <h2>Because life is too short to not be lived</h2>
-                <p>Des services, des conseils, un blog, et bien plus.</p>
-                <a href="#services" class="cta-button">Découvrir</a>
+        <section class="landigpage">
+            <div class="terminal">
+                <div class="terminal-text">
+                    <p>> Bienvenue sur Itszaaak</p>
+                    <p>> Créateur de guides, outils et solutions.
+                    <p>> Cliquez <span class="highlight terminal-command">help</span> pour commencer...</p>
+                </div>
             </div>
+        </section> 
+        <section class="about">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur debitis earum quia omnis eaque ex possimus minima ut neque molestiae beatae, quasi voluptates, enim ipsum? Voluptate architecto consequuntur totam aut?</p>
         </section>
+        <section class="services">
+            <h2>Decouvrez nos services</h2>
+            <div class="Shop">
+                <p>visitez noy=tre shop</p>
+            </div>
+            <div class="Blog">
+                <p>decouvrez notre blog</p>
+            </div>
+        </section>   
     </main>    
     <footer>
         <div class="container">
-            <p>&copy; 2025 Itszaaak. Tous droits réservés.</p>
+            <p>&copy;2025 Itszaaak. Tous droits réservés.</p>
             <div class="social-links">
                 <a href="#" target="_blank">Instagram</a>
                 <a href="#">Youtube</a>
@@ -49,5 +65,18 @@
             </div>
         </div>
     </footer>
+    <script>
+        window.addEventListener('scroll', () => {
+          const header = document.querySelector('header');
+          const languageSelector = document.querySelector('.language-selector select');
+          if (window.scrollY > 10) {
+            header.classList.add('scrolled');
+            languageSelector.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+            languageSelector.classList.remove('scrolled');
+          }
+        });
+      </script>
 </body>
 </html>
