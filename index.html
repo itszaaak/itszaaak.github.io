@@ -43,30 +43,36 @@
             </div>
         </section> 
         <section class="about">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur debitis earum quia omnis eaque ex possimus minima ut neque molestiae beatae, quasi voluptates, enim ipsum? Voluptate architecto consequuntur totam aut?</p>
+            <h2>qui est Zakk?</h2>
+            <p>Étudiant en dentaire et passionné de programmation, de design et de technologie, je consacre mon temps à explorer et créer des solutions digitales innovantes. Ayant une forte expérience dans le montage photo et vidéo, le développement web et l'optimisation de processus automatisés, je me suis lancé dans la création de services numériques destinés à aider les étudiants, créateurs de contenu ou geeks occasionnels à atteindre leurs objectifs. Mon approche est simple : offrir des outils efficaces et des solutions adaptées à chacun, tout en veillant à la simplicité et à l'esthétique</p>
         </section>
         <section class="services">
-            <h2>Decouvrez nos services</h2>
-            <div class="Shop">
-                <p>visitez noy=tre shop</p>
-            </div>
-            <div class="Blog">
-                <p>decouvrez notre blog</p>
+            <h2>Découvrez nos services</h2>
+            <div class="card-container">
+              <div class="card">
+                <h3>Shop</h3>
+                <p>Visitez notre shop pour découvrir des produits uniques et utiles.</p>
+                <a href="#" class="btn">Visiter le shop</a>
+              </div>
+              <div class="card">
+                <h3>Blog</h3>
+                <p>Découvrez notre blog pour des articles inspirants et informatifs.</p>
+                <a href="#" class="btn">Lire notre blog</a>
+              </div>
             </div>
         </section>
-        <section class="FooterTerminal">
-            <div class="terminal">
-                <div class="terminal-text">
-                    <p class="terminal-line">> Merci d'avoir visité</p>
-                    <p class="terminal-line">> Revenez bientôt pour de nouveaux</p>
-                    <p class="terminal-line">> Fin de session...</p>
-                    <div class="loading-bar-container">
-                        <div class="loading-bar"></div>
-                    </div>
+        <section class="footer-terminal">
+            <div class="fterminal">
+              <div class="fterminal-text">
+                <p>> Merci d'avoir visité</p>
+                <p>> Revenez bientôt pour des nouvelles guides</p>
+                <p>> Fin de session...</p>
+                <div class="floading-bar-container">
+                  <div class="floading-bar"></div>
                 </div>
-          </section> 
-          <section>
-          </section> 
+              </div>
+            </div>
+          </section>
     </main>    
     <footer>
         <div class="container">
@@ -75,6 +81,7 @@
                 <a href="#" target="_blank">Instagram</a>
                 <a href="#">Youtube</a>
                 <a href="#">TikTok</a>
+                <a href="#">Github</a>
             </div>
         </div>
     </footer>
@@ -92,21 +99,25 @@
         });
 
        // Fonction pour activer l'animation lorsque l'élément est visible
-        const footerTerminal = document.querySelector('.FooterTerminal');
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                footerTerminal.classList.add('start-animation');
-                observer.unobserve(entry.target); // Arrêter l'observation une fois que l'élément est visible
-                }
-            });
-        }, {
-        threshold: 0.9 // Déclencher quand 50% de l'élément est visible
+    document.addEventListener('DOMContentLoaded', () => {
+        const footer = document.querySelector('.footer-terminal');
+        const observer = new IntersectionObserver((entries,     observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                footer.classList.add('start-animation');
+                observer.unobserve(entry.target); // Pour que ça ne se relance qu'une fois
+            }
         });
+    }, {
+      threshold: 0.5 // Déclenche quand 50% de la section est visible
+    });
 
-// Observer l'élément du footer terminal
-observer.observe(footerTerminal);
+    if (footer) {
+      observer.observe(footer);
+    }
+  });
+
 
         
 
