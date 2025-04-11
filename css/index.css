@@ -5,7 +5,6 @@
   scroll-behavior: smooth;
 }
 
-
 .terminal {
   display: flex;
   justify-content: center;
@@ -32,6 +31,10 @@
 .terminal-text p:nth-child(3) {
   animation-delay: 4.4s;
 }
+.terminal-text div{
+  animation-delay: 6.6s;
+}
+
 
 .terminal-text p {
   opacity: 0;
@@ -70,4 +73,40 @@
   width: 100%;
   height: 100vh;
   background-color: bisque;
+}
+
+
+.loading-bar-container {
+  width: 100%; /* Ajuste la largeur selon ton design */
+  max-width: 600px; /* Limite la largeur maximum de la barre */
+  height: 15px;
+  background-color: #333;
+  overflow: hidden;
+  margin-top: 20px; /* Un peu d'espace au-dessus de la barre de chargement */
+}
+
+.loading-bar {
+  width: 0;
+  height: 100%;
+  background-color: #00ff91;
+  animation: loading 5s forwards;
+  
+}
+
+@keyframes loading {
+  0% {
+      width: 0;
+  }
+  25% {
+      width: 25%;
+  }
+  50% {
+      width: 50%;
+  }
+  75% {
+      width: 75%;
+  }
+  100% {
+      width: 100%;
+  }
 }

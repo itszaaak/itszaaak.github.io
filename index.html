@@ -53,7 +53,20 @@
             <div class="Blog">
                 <p>decouvrez notre blog</p>
             </div>
-        </section>   
+        </section>
+        <section class="FooterTerminal">
+            <div class="terminal">
+                <div class="terminal-text">
+                    <p class="terminal-line">> Merci d'avoir visité</p>
+                    <p class="terminal-line">> Revenez bientôt pour de nouveaux</p>
+                    <p class="terminal-line">> Fin de session...</p>
+                    <div class="loading-bar-container">
+                        <div class="loading-bar"></div>
+                    </div>
+                </div>
+          </section> 
+          <section>
+          </section> 
     </main>    
     <footer>
         <div class="container">
@@ -77,6 +90,30 @@
             languageSelector.classList.remove('scrolled');
           }
         });
+
+       // Fonction pour activer l'animation lorsque l'élément est visible
+        const footerTerminal = document.querySelector('.FooterTerminal');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                footerTerminal.classList.add('start-animation');
+                observer.unobserve(entry.target); // Arrêter l'observation une fois que l'élément est visible
+                }
+            });
+        }, {
+        threshold: 0.9 // Déclencher quand 50% de l'élément est visible
+        });
+
+// Observer l'élément du footer terminal
+observer.observe(footerTerminal);
+
+        
+
+
+
+
+
       </script>
 </body>
 </html>
