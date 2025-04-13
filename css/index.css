@@ -94,7 +94,6 @@
   height: 100vh;
 }
 
-
 /* BARRE DE CHARGEMENT TERMINAL FOOTER */
 .footer-terminal.start-animation .floading-bar-container {
   width: 100%;
@@ -160,25 +159,22 @@
   text-align: left; /* Centrer le texte dans le paragraphe */
 }
 
-
-
 /* Ajout d'une petite animation ou effet au survol pour la section */
 .about p:hover {
   transform: scale(1.02); /* Légère mise en valeur au survol */
   transition: transform 0.3s ease; /* Animation douce */
 }
 
-
-
-
-
-.services{
+/* Section Services */
+.services {
   padding: 50px 10%;
   background-color: #f8f8f8;  
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column; /* Empiler les éléments sur petits écrans */
 }
+
 .services h2 {
   font-family: 'IBM Plex Mono', monospace;
   color: #333;
@@ -188,7 +184,7 @@
 /* Conteneur des cartes */
 .card-container {
   display: flex;
-  gap: 2rem; /* Espacement entre les cartes */
+  gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsivité */
   margin-top: 2rem;
 }
@@ -232,4 +228,53 @@
 
 .card .btn:hover {
   background-color: #00cc7f; /* Légère variation au survol */
+}
+
+/* MEDIA QUERIES POUR RÉPONSE ADAPTATIVE */
+
+@media (max-width: 768px) {
+
+  /* Section About */
+  .about {
+    padding: 60px 5%;
+  }
+
+  .about h2 {
+    padding-left: 5%; /* Réduire le padding du titre */
+  }
+
+  .about p {
+    padding: 15px;
+    font-size: 1rem; /* Réduire la taille du texte */
+  }
+
+  /* Section Services */
+  .services {
+    padding: 30px 5%;
+  }
+
+  .card-container {
+    flex-direction: column; /* Empiler les cartes sur petits écrans */
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.4rem; /* Réduire la taille du titre */
+  }
+
+  .card p {
+    font-size: 0.9rem; /* Réduire la taille du texte */
+  }
+
+  .terminal-text p{
+    font-size: 1rem; /* Réduire la taille du texte */
+  }
+
+  .footer-terminal.start-animation .floading-bar-container {
+    max-width: 90%; /* Limiter la largeur de la barre */
+  }
 }

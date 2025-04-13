@@ -9,13 +9,7 @@ header {
     padding: 1rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
-  header.scrolled {
-    background-color: #fff;
-    color: #000;
-  }
 
-  
   header .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -67,80 +61,155 @@ header {
     background-color: #fff;
   }
 
-  /* Style général pour le footer */
-footer {
-    background-color: #121212;  /* Fond sombre */
-    color: #ffffff;  /* Texte en blanc */
-    padding: 2rem 1.5rem;  /* Espacement */
-    text-align: center;
-    font-family: 'IBM Plex Mono', monospace; /* Typographie moderne, type terminal */
+/* --- BURGER MENU (mobile only) --- */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background-color: currentColor;
+  transition: all 0.3s ease;
+}
+
+/* --- NAV LINKS --- */
+nav ul {
+  transition: all 0.3s ease;
+}
+.burger-menu.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+.burger-menu .bar {
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Conteneur du footer */
 .footer-container {
-    max-width: 1200px;  /* Largeur maximale */
-    margin: 0 auto;  /* Centrer le contenu */
+  max-width: 1200px;  /* Largeur maximale */
+  margin: 0 auto;  /* Centrer le contenu */
 }
 
 /* Nom de la marque */
 .footer-container .brand-name {
-    font-weight: bold;
-    color: #00ff91;  /* Une couleur verte fluo pour attirer l'attention sur la marque */
+  font-weight: bold;
+  color: #00ff91;  /* Une couleur verte fluo pour attirer l'attention sur la marque */
 }
 
 /* Liens des réseaux sociaux */
 .social-links {
-    margin-top: 1rem;  /* Espacement au-dessus des liens sociaux */
+  margin-top: 1rem;  /* Espacement au-dessus des liens sociaux */
+  display: flex;
+  justify-content: center;  /* Centrer les liens */
+  gap: 1rem;  /* Espacement entre les liens */
 }
 
 .social-links a {
-    text-decoration: none;  /* Enlever la décoration du texte (soulignement) */
-    color: #ffffff;  /* Couleur des liens en blanc */
-    margin: 0 1rem;  /* Espacement entre les liens */
-    font-size: 1.2rem;  /* Taille des caractères des liens */
-    transition: color 0.3s ease-in-out;  /* Transition fluide pour le changement de couleur */
+  text-decoration: none;  /* Enlever la décoration du texte (soulignement) */
+  color: #ffffff;  /* Couleur des liens en blanc */
+  font-size: 1.2rem;  /* Taille des caractères des liens */
+  transition: color 0.3s ease-in-out;  /* Transition fluide pour le changement de couleur */
 }
 
 /* Effet au survol des liens sociaux */
 .social-links a:hover {
-    color: #00ff91;  /* Changer la couleur au survol */
+  color: #00ff91;  /* Changer la couleur au survol */
 }
 
 /* Ajouter une ligne de séparation au-dessus du footer */
 footer::before {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;  /* Largeur de la ligne */
-    background-color: #444444;  /* Couleur gris foncé pour la ligne */
-    margin: 0 auto 1rem;  /* Centrer la ligne et espacement */
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;  /* Largeur de la ligne */
+  background-color: #444444;  /* Couleur gris foncé pour la ligne */
+  margin: 0 auto 1rem;  /* Centrer la ligne et espacement */
+}
+footer {
+  background-color: #121212;  /* Fond sombre */
+  color: #ffffff;  /* Texte en blanc */
+  padding: 2rem 1.5rem;  /* Espacement */
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace; /* Typographie moderne, type terminal */
 }
 
 
 
 
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
 
-  
-  /* ======================== */
-  /* RESPONSIVE NAVBAR */
-  /* ======================== */
-  @media (max-width: 768px) {
-    header .container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    nav {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-      width: 100%;
-      margin-top: 1rem;
-    }
-  
-    nav ul {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #000;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 998;
   }
-  
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+  .language-selector {
+    display: none; /* tu peux l’afficher ailleurs si tu veux */
+  }
+
+  footer {
+    padding: 1.5rem 1rem;  /* Réduction de l'espacement sur petits écrans */
+  }
+
+  .footer-container {
+    padding: 0 1rem;  /* Ajouter un peu d'espace à gauche et à droite */
+  }
+
+  .social-links {
+    flex-direction: column;  /* Empiler les liens social sur les petits écrans */
+    gap: 0.5rem;  /* Espacement réduit */
+  }
+
+  .social-links a {
+    font-size: 1rem;  /* Réduire la taille des liens sur petits écrans */
+  }
+
+  footer::before {
+    margin-bottom: 0.5rem;  /* Espacement réduit sous la ligne de séparation */
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+      padding: 1rem 0.5rem;  /* Espacement plus serré sur très petits écrans */
+  }
+
+  .footer-container {
+      padding: 0 0.5rem;  /* Ajouter un peu d'espace à gauche et à droite */
+  }
+
+  .social-links {
+      gap: 0.3rem;  /* Espacement très réduit */
+  }
+
+  .social-links a {
+      font-size: 0.9rem;  /* Réduire encore la taille des liens */
+  }
+}
