@@ -93,7 +93,7 @@
 
 /* SECTION ABOUT */
 .about {
-  background-color: #ededed;
+  background-color: #f1f1f1;
   padding: 80px 10%;
   display: flex;
   justify-content: center;
@@ -104,33 +104,28 @@
 
 .about h2 {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 4rem;
   color: #333;
-  text-transform: uppercase;
   letter-spacing: 1px;
   text-align: left;
+  padding: 0 4px;
 }
 
 .about p {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #333;
   line-height: 1.6;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   border-left: 4px solid #00ff91;
-  background-color: #fff;
-  border-radius: 8px;
   width: 100%;
   text-align: left;
+  font-weight: 550;
 }
 
-.about p:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-}
 
 /* SECTION SERVICES */
 .services {
@@ -144,7 +139,7 @@
 }
 
 .services h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: 'IBM Plex Mono', monospace;
   color: #333;
   margin-bottom: 4rem;
@@ -173,7 +168,7 @@
 
 .card h3 {
   font-size: 1.6rem;
-  color: #00ff91;
+  color: #000000;
   padding-bottom: 1rem;
 }
 
@@ -261,7 +256,11 @@
     font-size: 0.9rem;
   }
 
-  .terminal-text p {
+  .terminal-text p{
+    font-size: 1rem;
+  }
+
+  .fterminal-text p{
     font-size: 1rem;
   }
 

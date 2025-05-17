@@ -45,7 +45,7 @@ header {
   }
   
   nav a:hover {
-    text-decoration: underline;
+    color: #00ff91;
   }
   
   .language-selector select {
