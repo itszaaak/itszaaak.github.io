@@ -11,14 +11,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; /* Important pour mobile */
   min-height: 100vh;
-  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
   font-family: 'IBM Plex Mono', monospace;
   background-color: #000;
   color: #00ff91;
-  padding: 0 10%; /* Assure que ça ne déborde pas */
+  padding: 0 10%;
   box-sizing: border-box;
+  text-align: left; /* Améliore l’affichage mobile */
 }
+
 
 .fterminal p {
   opacity: 0;
@@ -218,15 +222,43 @@
   100% { width: 100%; }
 }
 
-/* MEDIA QUERIES */
 @media (max-width: 768px) {
+  /* Terminal principal */
+  .terminal {
+    padding: 0 5%;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .terminal-text p {
+    font-size: 1rem;
+  }
+
+  /* Terminal footer */
+  .fterminal {
+  padding: 0 5%;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-terminal.start-animation .fterminal-text p{
+  font-size: 1rem;
+}
+
+.footer-terminal.start-animation .floading-bar-container {
+  max-width: 100%;
+  width: 100%;
+  height: 10px;
+}
+
+  /* Section About */
   .about {
     padding: 60px 5%;
   }
 
   .about h2 {
-    padding-left: 5%;
     font-size: 1.8rem;
+    padding-left: 5%;
   }
 
   .about p {
@@ -235,8 +267,14 @@
     line-height: 1.5;
   }
 
+  /* Section Services */
   .services {
     padding: 60px 5%;
+  }
+
+  .services h2 {
+    font-size: 1.8rem;
+    padding-left: 5%;
   }
 
   .card-container {
@@ -255,17 +293,6 @@
   .card p {
     font-size: 0.9rem;
   }
-
-  .terminal-text p{
-    font-size: 1rem;
-  }
-
-  .fterminal-text p{
-    font-size: 1rem;
-  }
-
-  .footer-terminal.start-animation .floading-bar-container {
-    max-width: 90%;
-  }
 }
+
 
