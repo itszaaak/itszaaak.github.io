@@ -30,8 +30,22 @@ html {
   overflow-x: hidden;
 }
 
-.terminal-text p,
-.fterminal-text p {
+.fterminal p {
+  opacity: 0;
+}
+.footer-terminal.start-animation .fterminal-text p {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid #00ff91;
+  opacity: 0;
+  animation: typing 2s steps(40, end) forwards,
+             blink-caret 0.75s step-end infinite;
+  margin: 0.5rem 0;
+  font-size: clamp(1rem, 1.3vw + 0.2rem, 1.3rem);
+}
+
+
+.terminal-text p{
   white-space: nowrap;
   overflow: hidden;
   border-right: .15em solid #00ff91;
@@ -68,19 +82,16 @@ html {
 }
 
 /* COMMANDES CLIQUABLES */
-.highlight {
+.help {
   color: #fff;
+  text-decoration: none;
+  
 }
 
-.terminal-command {
-  cursor: pointer;
-  border-bottom: 1px dashed #00ff91;
-  transition: color 0.3s ease;
+.help:hover{
+  color:#00ff91;
 }
 
-.terminal-command:hover {
-  color: #00ff91;
-}
 
 /* SECTION ABOUT */
 .about {
@@ -230,11 +241,14 @@ html {
 
 @media (max-width: 768px) {
 
-  
+  .terminal, .fterminal {
+    padding: 1rem 1.5rem;
+  }
 
   .terminal-text p,
   .footer-terminal.start-animation .fterminal-text p {
     font-size: 1rem;
+    max-width: 324px;
   }
 
   .footer-terminal.start-animation .floading-bar-container {
