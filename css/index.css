@@ -6,7 +6,14 @@
   scroll-behavior: smooth;
 }
 
-/* STYLES GÉNÉRAUX TERMINAL */
+html {
+  font-size: 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #fff;
+  color: #333;
+}
+
+/* TERMINAL PRINCIPAL & FOOTER */
 .terminal, .fterminal {
   display: flex;
   justify-content: center;
@@ -14,74 +21,55 @@
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  max-width: 100%;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: inherit;
   background-color: #000;
   color: #00ff91;
-  box-sizing: border-box;
+  padding: 1rem;
   text-align: left;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-
-.fterminal p {
-  opacity: 0;
-}
-
-/* TEXTES ANIMÉS TERMINAL PRINCIPAL */
-.terminal-text p {
-  font-size: 1.3rem;
-  margin: 0.5rem 0;
+.terminal-text p,
+.fterminal-text p {
   white-space: nowrap;
   overflow: hidden;
   border-right: .15em solid #00ff91;
   opacity: 0;
-  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
-  animation-fill-mode: forwards;
-}
-
-.terminal-text p:nth-child(2) {
-  animation-delay: 2.2s;
-}
-.terminal-text p:nth-child(3) {
-  animation-delay: 4.4s;
-}
-
-/* TEXTES ANIMÉS TERMINAL FOOTER */
-.footer-terminal.start-animation .fterminal-text p {
-  font-size: 1.3rem;
+  animation: typing 2s steps(40, end) forwards,
+             blink-caret 0.75s step-end infinite;
   margin: 0.5rem 0;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: .15em solid #00ff91;
-  opacity: 0;
-  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
-  animation-fill-mode: forwards;
+  font-size: clamp(1rem, 1.3vw + 0.2rem, 1.3rem);
 }
 
+.terminal-text p:nth-child(2),
 .footer-terminal.start-animation .fterminal-text p:nth-child(2) {
   animation-delay: 2.2s;
 }
+
+.terminal-text p:nth-child(3),
 .footer-terminal.start-animation .fterminal-text p:nth-child(3) {
   animation-delay: 4.4s;
 }
+
 .footer-terminal.start-animation .fterminal-text div {
   animation-delay: 6.6s;
 }
 
-/* ANIMATIONS GÉNÉRALES */
+/* ANIMATIONS */
 @keyframes typing {
   from { width: 0; opacity: 1; }
   to { width: 100%; opacity: 1; }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
+  0%, 100% { border-color: transparent; }
   50% { border-color: #00ff91; }
 }
 
 /* COMMANDES CLIQUABLES */
 .highlight {
-  color: #ffffff;
+  color: #fff;
 }
 
 .terminal-command {
@@ -97,55 +85,59 @@
 /* SECTION ABOUT */
 .about {
   background-color: #f1f1f1;
-  padding: 80px 10%;
+  padding: clamp(3rem, 5vw, 5rem) 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .about h2 {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 3rem;
-  margin-bottom: 4rem;
-  color: #333;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 3rem;
   letter-spacing: 1px;
+  width: 100%;
+  max-width: 1000px;
+  color: #333;
+  padding-left: 4px;
   text-align: left;
-  padding: 0 4px;
 }
 
 .about p {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.4rem;
-  color: #333;
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
   line-height: 1.6;
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+  padding: 1rem 1.5rem;
   border-left: 4px solid #00ff91;
-  width: 100%;
-  text-align: left;
   font-weight: 550;
+  text-align: left;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
 }
-
 
 /* SECTION SERVICES */
 .services {
-  padding: 80px 10%;
+  padding: clamp(3rem, 5vw, 5rem) 10%;
   background-color: #f8f8f8;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .services h2 {
-  font-size: 3rem;
-  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(2rem, 4vw, 3rem);
   color: #333;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  text-align: left;
+  padding-left: 4px;
 }
 
 .card-container {
@@ -153,33 +145,37 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   width: 100%;
+  max-width: 1200px;
   margin-top: 2rem;
+  box-sizing: border-box;
 }
 
 .card {
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 12px rgb(0 0 0 / 0.15);
 }
 
 .card h3 {
-  font-size: 1.6rem;
-  color: #000000;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  color: #000;
   padding-bottom: 1rem;
 }
 
 .card p {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
   color: #666;
   margin-bottom: 1.5rem;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 .card .btn {
@@ -189,7 +185,9 @@
   font-size: 1rem;
   border-radius: 5px;
   text-decoration: none;
+  text-align: center;
   transition: background-color 0.3s ease;
+  align-self: flex-start;
 }
 
 .card .btn:hover {
@@ -200,7 +198,7 @@
 .footer-terminal.start-animation .floading-bar-container {
   width: 100%;
   height: 15px;
-  background-color: #cc3c3c;
+  background-color: #262525;
   overflow: hidden;
   margin-top: 2rem;
   box-sizing: border-box;
@@ -221,49 +219,48 @@
   100% { width: 100%; }
 }
 
+/* RESPONSIVE GLOBAL */
+@media (max-width: 1024px) {
+  .about,
+  .services {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
 @media (max-width: 768px) {
 
   .terminal, .fterminal {
-    flex-direction: column;
-    width: 100%;
+    padding: 1rem 1.5rem;
   }
 
-  .terminal-text p {
-    font-size: 1rem;
-  }
-  .footer-terminal.start-animation .fterminal-text p{
+  .terminal-text p,
+  .footer-terminal.start-animation .fterminal-text p {
     font-size: 1rem;
   }
 
   .footer-terminal.start-animation .floading-bar-container {
-    width: 100%;
     height: 10px;
   }
 
-  /* Section About */
   .about {
-    padding: 60px 5%;
+    padding: 3rem 5%;
   }
 
-  .about h2 {
+  .about h2,
+  .services h2 {
     font-size: 1.8rem;
     padding-left: 5%;
   }
 
   .about p {
-    padding: 15px;
     font-size: 1rem;
+    padding: 1rem;
     line-height: 1.5;
   }
 
-  /* Section Services */
   .services {
-    padding: 60px 5%;
-  }
-
-  .services h2 {
-    font-size: 1.8rem;
-    padding-left: 5%;
+    padding: 3rem 5%;
   }
 
   .card-container {
@@ -284,4 +281,24 @@
   }
 }
 
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
 
+  .about h2, .services h2 {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .about p, .card p {
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+
+  .card .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
