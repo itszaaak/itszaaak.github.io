@@ -230,9 +230,7 @@ html {
 
 @media (max-width: 768px) {
 
-  .terminal, .fterminal {
-    padding: 1rem 1.5rem;
-  }
+  
 
   .terminal-text p,
   .footer-terminal.start-animation .fterminal-text p {
