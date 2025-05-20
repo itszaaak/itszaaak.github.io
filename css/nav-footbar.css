@@ -198,6 +198,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+
+  html{
+    font-size: 14px;
+  }
   footer {
       padding: 1rem 0.5rem;  /* Espacement plus serré sur très petits écrans */
   }
