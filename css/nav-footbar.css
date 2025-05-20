@@ -151,7 +151,7 @@ footer {
 /* --- RESPONSIVE --- */
 @media screen and (max-width: 768px) {
 
-  nav ul {
+  header nav ul, footer nav ul {
     display: none;
     position: absolute;
     top: 100%;
@@ -164,7 +164,7 @@ footer {
     z-index: 998;
   }
 
-  nav ul.active {
+  header nav ul.active {
     display: flex;
   }
 
@@ -213,4 +213,11 @@ footer {
   .social-links a {
       font-size: 0.9rem;  /* Réduire encore la taille des liens */
   }
+  
+  @media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}  
+ 
 }

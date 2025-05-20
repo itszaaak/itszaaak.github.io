@@ -293,9 +293,6 @@ html {
 }
 
 @media (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
 
   .about h2, .services h2 {
     padding-left: 0;
