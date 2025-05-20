@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/css/nav-footbar.css">
+     <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Itszaaak</h1>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Accueil</a></li>
+                    <li><a href="/index.html#about">À propos</a></li>
+                    <li><a href="/index.html#services">Services</a></li>
+                </ul>
+                <div class="language-selector">
+                    <select onchange="window.location.href=this.value;">
+                        <option value="/fr/" lang="fr">Français</option>
+                    </select>
+                </div>
+                <div class="burger-menu" id="burger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+
+        <div class="terminal-line">> cat articles.txt</div>
+        
+        <div class="filters">
+            <button class="active" data-filter="all">Tous</button>
+            <button data-filter="tech">Tech</button>
+            <button data-filter="photo">Photo</button>
+            <button data-filter="productivity">Productivité</button>
+        </div>
+
+        <div class="articles">
+            <a href="/ArticlesBlog/article1.html" class="article" data-category="tech">
+                <div class="badge">Tech</div>
+                <div class="date">19 mai 2025</div>
+                <div class="title">Comment j'ai automatisé mes backups avec rclone</div>
+                <div class="summary">Un petit script bash, une tâche cron, et fini les pertes de données.</div>
+            </a>
+            <a href="/blog/article2.html" class="article" data-category="photo">
+                <div class="badge">Photo</div>
+                <div class="date">12 mai 2025</div>
+                <div class="title">Créer un rendu argentique avec un iPhone</div>
+                <div class="summary">Mes apps et réglages préférés pour imiter Fujifilm sur mobile.</div>
+            </a>
+            <a href="/blog/article3.html" class="article" data-category="productivity">
+                <div class="badge">Productivité</div>
+                <div class="date">3 mai 2025</div>
+                <div class="title">Ma méthode de révision Notion + GPT</div>
+                <div class="summary">Un combo simple pour des révisions ciblées et efficaces.</div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy;2025 Itszaaak. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/zakkariaerrouman/" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Youtube</a>
+                <a href="#" target="_blank">TikTok</a>
+                <a href="https://github.com/itszaaak" target="_blank">Github</a>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/scrip.js"></script>
+</body>
+</html>

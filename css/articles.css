@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Mono','Courier New', monospace;
+  background-color: #000000;
+}
+
+
+
+main {
+  padding-top: 4rem;  
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.article-sidebar {
+  position: sticky;
+  top: 4rem;
+  align-self: flex-start;
+  background-color: #000000;
+  padding: 1.85rem 0 0 3rem;
+}
+
+.article-sidebar ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Ajouté pour empiler les liens verticalement */
+   
+}
+
+.article-sidebar li {
+  margin-bottom: 1rem;
+}
+
+.article-sidebar a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.2s;
+  font-weight: 700;
+}
+
+.article-sidebar a:hover {
+  color: #00ff91;
+}
+
+.blog-article {
+  background: #000000;
+  padding: 2rem;
+}
+.article-header {
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.article-category {
+  color: #00ff91;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.article-title {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+  line-height: 1.2;
+}
+.article-date {
+  color: #888;
+  font-size: 0.9rem;
+}
+.article-content {
+  line-height: 1.7;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.article-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #00ff91;
+}
+
+.article-content blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background: #2d2d2d;
+  border-left: 4px solid #ff0000;
+  font-style: italic;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 4, 1;
+  }
+
+  .article-sidebar {
+    display: none;
+  }
+
+  .blog-article {
+    padding: 1.5rem;
+  }
+
+  .article-title {
+    font-size: 1.6rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.25rem;
+  }
+}

@@ -26,4 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(footer);
     }
+    
+    const buttons = document.querySelectorAll(".filters button");
+    const articles = document.querySelectorAll(".article");
+
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            buttons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filter = btn.getAttribute("data-filter");
+
+                articles.forEach((article) => {
+                const category = article.getAttribute("data-category");
+                article.style.display = (filter === "all" || category === filter) ? "block" : "none";
+            });
+        });
+    });    
 });
+

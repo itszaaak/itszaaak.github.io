@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article test</title>
+    <link rel="stylesheet" href="/css/nav-footbar.css">
+    <link rel="stylesheet" href="/css/articles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Itszaaak</h1>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Accueil</a></li>
+                    <li><a href="/index.html#about">À propos</a></li>
+                    <li><a href="/index.html#services">Services</a></li>
+                </ul>
+                <div class="language-selector">
+                    <select onchange="window.location.href=this.value;">
+                        <option value="/fr/" lang="fr">Français</option>
+                    </select>
+                </div>
+                <div class="burger-menu" id="burger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <aside class="article-sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#part1">Partie 1</a></li>
+                    <li><a href="#part2">Partie 2</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <article class="blog-article">
+            <section class="article-header">
+                <p class="article-category">Productivité</p>
+                <h1 class="article-title">Ma méthode de révision Notion + GPT</h1>
+                <p class="article-date">Publié le 3 mai 2025</p>
+            </section>
+
+            <section class="article-content">
+                <p>Depuis que j'utilise Notion avec ChatGPT, mes révisions sont bien plus efficaces. Voici comment je m’y prends...</p>
+        
+                <h2>1. Créer une base de connaissances</h2>
+                <p>Je commence par centraliser toutes les infos dans des bases de données Notion, triées par matière.</p>
+
+                <h2>2. Générer des quiz personnalisés</h2>
+                <p>Grâce à ChatGPT, je transforme mes notes en QCM, QROC ou cartes mémoire.</p>
+                <blockquote>“La répétition espacée est la clé de la mémorisation à long terme.”</blockquote>
+                <h2>3. Répéter avec Anki ou Notion</h2>
+                <p>Je choisis l’outil en fonction du temps dispo : Anki pour du long terme, Notion pour du rapide.</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy;2025 Itszaaak. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/zakkariaerrouman/" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Youtube</a>
+                <a href="#" target="_blank">TikTok</a>
+                <a href="https://github.com/itszaaak" target="_blank">Github</a>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/scrip.js"></script>
+</body>
+</html>
