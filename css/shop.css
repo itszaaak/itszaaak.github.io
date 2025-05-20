@@ -1,0 +1,78 @@
+/* Reset + base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Mono','Courier New', monospace;
+  background-color: #000000;
+}
+
+/* Main container */
+main {
+  padding: 1.5rem;
+  min-height: 100vh; 
+  width: 100%;
+  margin-top: 3rem;
+}
+.shop-terminal {
+  padding: 2rem 1rem;
+  color: #00ff91;
+  background-color: #000;
+}
+
+.terminal-header {
+  margin-bottom: 2rem;
+}
+
+.terminal-products {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;  
+}
+
+.terminal-product {
+  border-left: 2px solid #00ff91;
+  padding-left: 1rem;
+}
+
+.filename {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #999;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.terminal-link {
+  display: inline-block;
+  color: #000;
+  background-color: #00ff91;
+  padding: 0.3rem 0.75rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.terminal-link:hover {
+  background-color: #03c772;
+}
+
+@media (max-width: 480px) {
+  .shop-terminal {
+    padding: 1rem;
+  }
+
+  .terminal-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.5rem;
+  }
+}
