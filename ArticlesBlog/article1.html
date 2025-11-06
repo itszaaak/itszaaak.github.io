@@ -34,32 +34,264 @@
         <aside class="article-sidebar">
             <nav>
                 <ul>
-                    <li><a href="#intro">Introduction</a></li>
-                    <li><a href="#part1">Partie 1</a></li>
-                    <li><a href="#part2">Partie 2</a></li>
-                    <li><a href="#conclusion">Conclusion</a></li>
+                    <li><a href="#1">Les Types</a></li>
+                    <li><a href="#2">Les Variables</a></li>
+                    <li><a href="#3">Les conditions et operateurs</a></li>
+                    <li><a href="#4">Les Entrée/Sortie </a></li>
+                    <li><a href="#5">Les Boucles while</a></li>
+                    <li><a href="#6">Les Boucles for</a></li>
+                    <li><a href="#7">Les fonctions</a></li>
+                    <li><a href="#8">Les structures de données</a></li>
                 </ul>
             </nav>
         </aside>
 
         <article class="blog-article">
             <section class="article-header">
-                <p class="article-category">Productivité</p>
-                <h1 class="article-title">Ma méthode de révision Notion + GPT</h1>
-                <p class="article-date">Publié le 3 mai 2025</p>
+                <p class="article-category">Dev</p>
+                <h1 class="article-title">Programmation impérative : premiers pas pour débutants</h1>
+                <p class="article-date">Publié le 6 novembre 2025</p>
             </section>
 
             <section class="article-content">
-                <p>Depuis que j'utilise Notion avec ChatGPT, mes révisions sont bien plus efficaces. Voici comment je m’y prends...</p>
+                <p>Apprenez les notions essentielles de la programmation : types, variables, conditions, boucles et fonctions, pour écrire vos premiers programmes. </p>
         
-                <h2>1. Créer une base de connaissances</h2>
-                <p>Je commence par centraliser toutes les infos dans des bases de données Notion, triées par matière.</p>
+                <h2 id="1">1. Les Types</h2>
+                <p>Une information ou une donnée en programmation est souvent représentée par un type. Selon le paradigme et le langage de programmation utilisé, il existe différentes manières de représenter ces types. Dans cette partie du cours, nous allons nous concentrer uniquement sur les types principaux, également appelés types primitifs.</p>
 
-                <h2>2. Générer des quiz personnalisés</h2>
-                <p>Grâce à ChatGPT, je transforme mes notes en QCM, QROC ou cartes mémoire.</p>
-                <blockquote>“La répétition espacée est la clé de la mémorisation à long terme.”</blockquote>
-                <h2>3. Répéter avec Anki ou Notion</h2>
-                <p>Je choisis l’outil en fonction du temps dispo : Anki pour du long terme, Notion pour du rapide.</p>
+                <p class="voici">Voici le tableau des types :</p>
+                
+                <table border="4">
+                    <thead>
+                        <tr>
+                        <th>Type</th>
+                        <th>Dénomination</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>Int</td>
+                        <td>Nombres entiers</td>
+                        </tr>
+                        <tr>
+                        <td>Float</td>
+                        <td>Nombres à virgule</td>
+                        </tr>
+                        <tr>
+                        <td>Boolean</td>
+                        <td>Soit Vrai soit Faux</td>
+                        </tr>
+                        <tr>
+                        <td>Char</td>
+                        <td>Caractère</td>
+                        </tr>
+                        <tr>
+                        <td>String</td>
+                        <td>Chaîne de caractères</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="remarque"><strong>Remarque</strong> : Un booléen est un type qui ne peut prendre que l'une des deux valeurs suivantes : Vrai ou Faux</p>
+
+
+
+                <h2 id="2">2. Les Variables</h2>
+                <p>Les variables en programmation sont des "boîtes" qui stockent les informations que nous souhaitons manipuler. Ces variables, comme leur nom l'indique, peuvent varier suite à une opération que nous exécutons sur elles, ou elles peuvent être déclarées comme constantes, c'est-à-dire des boîtes dont la valeur ne change jamais.</p>
+                <p class="voici">Mais comment déclare-t-on une variable ? Selon le langage de programmation, la déclaration d'une variable varie. Prenons l'exemple de Javascript, dans ce langage, toute variable est déclarée avec les mots-clés <strong>let</strong>, <strong>var</strong> ou <strong>const</strong>, indépendamment de son type.</p>
+
+                <p> <strong>Remarque</strong> : Il existe des conventions de nommage des variables, je vous invite à faire des recherches à ce sujet.</p>
+
+                <p class="voici">En général, pour déclarer une variable, on utilise la syntaxe suivante : </p>
+
+                <blockquote>char mot = "coucou"; //particularité de c : une string est considereé comme tableau de char <br>
+                bool estPlein = true; <br>
+                float pi = 3.14; <br>
+                int monNombre; // On peut déclarer une variable sans lui attribuer une valeur initiale
+                </blockquote>
+
+                <h2 id="3">3. Conditions et opérateurs</h2>
+                <p>Le premier type d'opération que nous allons voir pour traiter nos données sont les <strong>if</strong> statements ou conditions. Cette opération permet l'exécution d'une suite d'opérations si et seulement si une condition spécifique donnée à l'avance est vérifiée.</p>
+
+                <p class="voici">La déclaration de cette opération se fait souvent de la manière suivante :</p>
+
+                <blockquote>
+                    if (condition): <br>
+                    // Exécution de l'opération <br>
+                    else if (condition): <br>
+                    // Exécution de l'opération <br>
+                    else: <br>
+                    // Exécution de l'opération
+                </blockquote>
+
+                <p><strong>Remarque</strong> : Le "else if" et le "else", selon les cas, sont optionnels et non obligatoires. À noter que le "else" n'implique pas une condition à vérifier.</p>
+
+                <p class="voici">Souvent, dans les conditions à vérifier dans le if statement, on utilise des opérateurs. Il existe différents types d'opérateurs selon leur utilité. Dans ce cas, nous allons nous contenter de voir les plus utilisés :</p>
+                <p class="voici"><strong>Opérateurs mathématiques :</strong></p>
+                <table border="4">
+                    <thead>
+                        <tr>
+                        <th>Opérateur</th>
+                        <th>Dénomination</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>==</td>
+                        <td>Égale à</td>
+                        </tr>
+                        <tr>
+                        <td>&lt;</td>
+                        <td>Strictement inférieur à</td>
+                        </tr>
+                        <tr>
+                        <td>&gt;</td>
+                        <td>Strictement supérieur à</td>
+                        </tr>
+                        <tr>
+                        <td>&lt;=</td>
+                        <td>Inférieur ou égal à</td>
+                        </tr>
+                        <tr>
+                        <td>&gt;=</td>
+                        <td>Supérieur ou égal à</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="voici"> <strong>Opérateurs logiques :</strong></p>
+
+                <table border="4">
+                    <thead>
+                        <tr>
+                        <th>Opérateur</th>
+                        <th>Dénomination</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>&amp;&amp;</td>
+                        <td>ET logique</td>
+                        </tr>
+                        <tr>
+                        <td>||</td>
+                        <td>OU logique</td>
+                        </tr>
+                        <tr>
+                        <td>!</td>
+                        <td>NON logique</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="voici"><strong>Remarque</strong> : != signifie différent.</p>
+
+                <p><strong>Divergence</strong> : il existe ce qu'on appelle un opérateur ternaire. Je vous laisse faire des recherches dessus si cela vous intéresse, mais cela reste du sucre syntaxique.</p>
+
+                <h2 id="4">4. Les Entrées et sorties</h2>
+                <p>Les entrées et sorties sont les moyens par lesquels un programme communique avec l'utilisateur. Une entrée correspond à une information que l'utilisateur fournit au programme, par exemple en tapant une valeur au clavier. Une sortie, à l'inverse, est une information que le programme renvoie à l'utilisateur, comme l'affichage d'un résultat à l'écran. Ces deux opérations sont essentielles, car elles permettent d'interagir avec le programme et de rendre son exécution dynamique.</p>
+
+                <p class="voici"><strong>example en python : </strong></p>
+
+                <blockquote>
+                    # Entrée : on demande une valeur à l'utilisateur <br>
+                    nom = input("Entrez votre nom : ") <br>
+
+                    # Sortie : on affiche un message personnalisé <br>
+                    print("Bonjour,", nom, "!")
+
+                </blockquote>
+
+                <h2 id="5">5. Les Boucles while et do while</h2>
+                <p>Le deuxième type d'opération que l'on peut faire en programmation sont les boucles while ou boucles tant que. Ce type de boucle exécute une opération ou une série d'opérations tant qu'une condition est vraie. Pour ne pas créer des boucles infinies, la boucle while nécessite une condition d'arrêt, voici un exemple :</p>
+
+                <blockquote>
+                    int a = 0; <br>
+                    while(a <= 3){ <br>
+                        //exécution d'une opération <br>
+                        a++; //incrémentation de a chaque itération de la boucle. <br>
+                    }
+                </blockquote>
+
+                <p>La boucle while exécute son bloc tant qu'une condition est vraie, mais elle peut ne jamais s'exécuter si la condition est fausse dès le départ. À l'inverse, la boucle do...while exécute toujours son bloc au moins une fois, car la condition est vérifiée après l'exécution. Ainsi, do...while est pratique quand on veut garantir une première itération avant de tester la condition.</p>
+
+                <h2 id="6">6. Les boucles for</h2>
+                <p>La boucle for, quant à elle, est utilisée lorsque vous connaissez à l'avance le nombre d'itérations à effectuer. Elle se compose de trois parties : l'initialisation, la condition et l'incrémentation. Le bloc d'instructions est exécuté tant que la condition est vraie, et après chaque itération, l'incrémentation est effectuée.</p>
+
+                <p>A noter aussi que dans une boucle while, la condition est également vérifiée avant chaque itération du bloc d'instructions. Cependant, dans le cas d'une boucle for, la vérification de la condition se fait après l'exécution de l'incrémentation. Cela signifie que le bloc d'instructions sera exécuté au moins une fois, même si la condition est fausse dès le départ.</p>
+                <p class="voici"><strong>voici un example de boucle for en c</strong></p>
+
+                <blockquote>
+                    int a = 0; <br>
+                    int b = 1; <br>
+                    for(int i = 0; i<6; i++){ <br>
+                        b = b*2; <br>
+                    }
+                </blockquote>
+
+                <p><strong>Remarque</strong> : à l'intérieur des boucles for il ne faut jamais toucher a la variable qui a le rôle d'itérateur car peut entrainer des erreurs</p>
+
+                <h2 id="7">7. les fonctions</h2>
+                <p>Souvent lors du développement d'une application, les programmeurs se retrouvent à réécrire les mêmes bouts de code. Non seulement cela ne rend pas le code esthétique, mais cela rend également plus difficile le débogage et l'entretien du code.</p>
+                <p class="voici">Pour résoudre ce problème, les fonctions entrent en jeu. Il s'agit de bouts de code génériques avec des paramètres variables qui manipulent les données et retournent un résultat final. Dans notre code propre et organisé, ces bouts de code seront substitués par l'appel à la fonction, et éventuellement, le résultat retourné sera stocké dans une variable.</p>
+                <p>Avec les fonctions, les notions de variable globale et variable locale entrent également en jeu. La différence est que le nom des variables déclarées dans une fonction est considéré comme local à la fonction, c'est-à-dire qu'elles sont créées lors de l'appel à la fonction et détruites une fois que le résultat de la fonction est retourné. Par conséquent, il n'est pas grave de donner le même nom à une variable locale qu'à une variable globale (par convention, il est préférable de ne pas le faire).</p>
+
+                <blockquote>
+                // Exemple de fonction normale <br>
+                int somme(int a, int b) { <br>
+                    int resultat = a + b; <br>
+                    return resultat; <br>
+                }<br>
+
+                // Exemple de fonction récursive pour calculer le factoriel d'un nombre<br>
+                int factoriel(int n) {<br>
+                    if (n == 0) {<br>
+                        return 1;<br>
+                    } else { <br>
+                        return n * factoriel(n - 1); <br>
+                    }<br>
+                }<br>
+
+                int main() {<br>
+                    // Appel de la fonction somme<br>
+                    int resultatSomme = somme(3, 4);    //appel de la fonction somme<br>
+                    printf("Le résultat de la somme est : %d\n", resultatSomme);<br>
+
+                    // Appel de la fonction factoriel<br>
+                    int nombre = 5;<br>
+                    int resultatFactoriel = factoriel(nombre); //appel de la fonction recursive factorielle<br>
+                    printf("Le factoriel de %d est : %d\n", nombre, resultatFactoriel);<br>
+
+                    return 0;
+                } 
+                </blockquote>
+
+                <p><strong>Remarque</strong> : Je vous ai également donné un exemple de fonction récursive. Si vous êtes curieux/se, vous pouvez approfondir le sujet pour mieux comprendre son fonctionnement.</p>
+
+                <p class="voici"><strong>Remarque</strong> : Lors de l'appel d'une fonction, le nombre de variables passées en paramètres ainsi que leur type doivent être les mêmes que ceux définis lors de la création de la fonction. Il existe également des fonctions variadiques qui permettent de gérer un nombre variable de paramètres. Je vous invite à approfondir le sujet si vous souhaitez en savoir plus</p>
+
+                <p><strong>Remarque</strong> : vous souciez pas du <strong>%d</strong> et <strong>\n</strong> ça reste des particularites du language C</p>
+
+                <h2 id="8">8. Les structures de donnes</h2>
+                <p>En programmation, les structures de données te permettent de regrouper des informations liées ensemble. Par exemple, tu pourrais créer une structure de données pour représenter une personne avec des informations comme son nom, son âge et son adresse. Cela rend plus facile la manipulation et l'accès à ces informations quand tu en as besoin dans ton programme. Les structures de données sont un concept important en programmation car elles aident à organiser et gérer les informations de manière efficace.</p>
+
+                <p class="voici">Les structures de données sont également utilisées pour améliorer les performances de recherche. En fonction du type de données que nous avons et des opérations que nous voulons effectuer, différentes structures de données peuvent être utilisées pour optimiser la recherche.</p>
+
+                <p>
+                    Par exemple, si nous avons une grande collection d'éléments et que nous voulons rechercher rapidement un élément spécifique, nous pouvons utiliser des structures de données telles que les tableaux indexés, les arbres de recherche binaires ou les tables de hachage. Ces structures de données sont conçues pour organiser les données de manière à permettre une recherche rapide et efficace.
+                </p>
+
+                <p class="voici">Chaque structure de données a ses propres avantages et limitations en termes de performances et d'utilisation de la mémoire. Il est donc important de choisir la bonne structure de données en fonction des besoins spécifiques de notre programme. En optimisant la structure de données pour les opérations de recherche, nous pouvons améliorer la vitesse et l'efficacité de notre programme.</p>
+
+                <p><strong>Remarque</strong> les structures de données sont surtout abordées en Algorithmique.</p>
+                <p><strong>Remarque</strong> pour les projets 
+                    <a href="https://github.com/itszaaak/programmation-imperative" target="_blank" 
+                        style="color: #00ff91; text-decoration: none; font-weight: bold;">
+                        cliquer ici
+                    </a>
+                </p>
+
+
+
             </section>
         </article>
     </main>
