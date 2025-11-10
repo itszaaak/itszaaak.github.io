@@ -86,6 +86,11 @@ main {
   margin-top: 2rem;
   color: #00ff91;
 }
+.article-content h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #00ff91;
+}
 
 .article-content blockquote {
   margin: 1.5rem 0;
@@ -99,10 +104,30 @@ main {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.retour{
+  margin-bottom: 1rem;
+}
 
 .remarque{
   margin-top: 1rem;
 }
+
+pre {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #2d2d2d;
+  color: #eee;
+  padding: 1em;
+  overflow-x: auto;         
+  white-space: pre-wrap;    
+  word-wrap: break-word;    
+  max-width: 100%;          
+  box-sizing: border-box;   
+  font-family: monospace;   
+  font-size: 0.95rem;    
+}   
+
+
 @media screen and (max-width: 768px) {
   main {
     flex-direction: column;
@@ -124,4 +149,10 @@ main {
   .article-content h2 {
     font-size: 1.25rem;
   }
+  .article-content h3 {
+    font-size: 1.25rem;
+  }
 }
+
+
+
