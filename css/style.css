@@ -504,9 +504,10 @@ ul {
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%;
+        left: 0;
         height: 100vh;
         width: 100vw;
+        transform: translateX(100%);
         background-color: var(--bg-main);
         flex-direction: column;
         justify-content: center;
@@ -515,7 +516,7 @@ ul {
     }
 
     .nav-links.nav-active {
-        right: 0;
+        transform: translateX(0);
     }
     .section-container {
         padding: 3rem 0;
