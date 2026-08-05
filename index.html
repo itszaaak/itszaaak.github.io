@@ -3,91 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Itszaaak</title>
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/nav-footbar.css">
+    <title>Portfolio | Itzaaak</title>
+    
+    <!-- Typographie-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Itszaaak</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#services">Services</a></li>
-                </ul>
-                <div class="language-selector">
-                    <select onchange="window.location.href=this.value;">
-                        <option value="/fr/" lang="fr">Français</option>
-                    </select>
-                </div>
-                <div class="burger-menu" id="burger-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </nav>
-        </div>
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#accueil" class="logo">Itszaaak</a>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Menu Mobile -->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
     <main>
-        <section class="landigpage">
-            <div class="terminal">
-                <div class="terminal-text">
-                    <p>> Bienvenue sur Itszaaak</p>
-                    <p>> Créations de guides, outils et solutions.
-                    <p>> Cliquez<a href="#about" class="help"> Help </a>pour commencer...</p>
+        <!-- Section Hero -->
+        <section id="accueil" class="hero reveal">
+            <div class="hero-content">
+                <h1 class="hero-title">Conception des solutions par le Code</h1>
+                <p class="hero-subtitle">Architecte de solutions numériques, systèmes locaux, IA et interfaces minimalistes, je conçois des outils pensés pour répondre à des besoins concrets.</p>
+                <div class="hero-cta">
+                    <a href="#projets" class="btn btn-primary">Voir mes réalisations</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
                 </div>
             </div>
-        </section> 
-        <section id="about" class="about">
-            <h2>À propos...</h2>
-            <p>Ce site est un hub conçu pour les étudiants, les geeks et les passionnés curieux de passage. Notre objectif ? Centraliser des ressources utiles, des guides clairs et des services simples pour vous aider à répondre à vos questions, concrétiser vos idées et gagner du temps. Que vous soyez en pleine révision, en quête d'un outil malin ou simplement curieux, vous êtes au bon endroit..</p>
-        </section>
-        <section id="services" class="services">
-            <h2>Découvrez nos services</h2>
-            <div class="card-container">
-              <div class="card">
-                <h3>Shop</h3>
-                <p>Visitez notre shop pour découvrir des produits uniques et utiles.</p>
-                <a href="/shop.html" class="btn">Accedez au shop </a>
-              </div>
-              <div class="card">
-                <h3>Blog</h3>
-                <p>Découvrez notre blog pour des articles inspirants et informatifs.</p>
-                <a href="/blog.html" class="btn">Consultez le blog</a>
-              </div>
-              <div class="card">
-                <h3>Dentino</h3>
-                <p>La toute premiere plate forme dediée aux etudiants en dentaire</p>
-                <a href="#" class="btn">Coming soon</a>
-              </div>
-            </div>
-        </section>
-        <section class="footer-terminal">
-            <div class="fterminal">
-              <div class="fterminal-text">
-                <p>> Merci d'avoir visité</p>
-                <p>> Revenez bientôt pour des nouvelles guides.</p>
-                <p>> Fin de session...</p>
-                <div class="floading-bar-container">
-                  <div class="floading-bar"></div>
+            
+            <!--  fenêtre de code minimaliste -->
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="dot close"></span>
+                        <span class="dot minimize"></span>
+                        <span class="dot expand"></span>
+                    </div>
+                    <div class="code-body">
+                        <pre><code><span class="comment">// Démarrage de l'environnement local</span>
+<span class="keyword">const</span> env = <span class="function">initContainers</span>({
+  <span class="property">architecture</span>: <span class="string">'optimisée'</span>,
+  <span class="property">interface</span>: <span class="string">'minimaliste'</span>,
+  <span class="property">ui</span>: <span class="string">'fluide'</span>
+});
+
+env.<span class="function">deploy</span>(); <span class="comment">// Prêt pour la production.</span></code></pre>
+                    </div>
                 </div>
-              </div>
             </div>
         </section>
-    </main>    
-    <footer>
-        <div class="container">
-            <p>&copy;2025 Itszaaak. Tous droits réservés.</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/zakkariaerrouman/" target="_blank">Instagram</a>
-                <a href="#" target="_blank">Youtube</a>
-                <a href="#" target="_blank">TikTok</a>
-                <a href="https://github.com/itszaaak" target="_blank">Github</a>
+
+        <!-- Section Projets -->
+        <section id="projets" class="projects-section reveal">
+            <div class="section-container">
+                <h2 class="section-title">Réalisations :</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Carte Projet 1 -->
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>Techub</h3>
+                            <p>Techub rassemble mes projets et réflexions autour de la tech : articles sur le développement, l'IA locale et les systèmes que je conçois, ainsi qu'une vitrine de mes produits numériques.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                            </div>
+                            <a href="#" class="project-link">Explorer ↗</a>
+                        </div>
+                    </article>
+
+                    <!-- Carte Projet 2 -->
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>Dentino</h3>
+                            <p>Dentino est une plateforme de pédagogie dentaire pensée pour un double public : patients et étudiants retrouvent, pour chaque acte, une explication adaptée à leur niveau.</p>
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                                <span>API</span>
+                            </div>
+                            <a href="#" class="project-link">Explorer ↗</a>
+                        </div>
+                    </article>
+
+                    <!-- Carte Projet 3 -->
+                    <article class="project-card">
+                        <div class="project-content">
+                            <h3>DenterreMalgache</h3>
+                            <p>DenTerre Malgache est le site d'une mission humanitaire dentaire à Madagascar, pensé pour présenter le projet, mobiliser les soutiens et faciliter les dons au service des populations locales.</p>
+                            <div class="project-tags">
+                                <span>UI/UX Design</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JS</span>
+                            </div>
+                            <a href="#" class="project-link">Explorer ↗</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section À Propos & Compétences -->
+        <section id="a-propos" class="about-section reveal">
+            <div class="section-container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2 class="section-title">À propos de Zakk</h2>
+                        <p>Étudiant en chirurgie dentaire,également passionné par la technologie et le développement informatique. J'aime concevoir des outils numériques et des systèmes répondant à des problématiques concrètes, qu'elles touchent au domaine dentaire ou à d'autres thématiques</p>
+                        <p>Ce site rassemble mes différents projets, entre outils pédagogiques, engagement humanitaire et recherche appliquée. Chacun d'eux illustre cette volonté de croiser mes deux domaines de prédilection : la dentisterie et le développement.</p>
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-item">Développement Web</div>
+                        <div class="skill-item">Intelligence artificielle / Deep learning</div>
+                        <div class="skill-item">Architecture de systèmes autonomes</div>
+                        <div class="skill-item">Intégration d'APIs & Asynchrone</div>
+                        <div class="skill-item">Outils de Conteneurisation (Notion, Obsidian...)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer & Contact -->
+    <footer id="contact" class="footer reveal">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h2 class="footer-title">Prêt à collaborer ?</h2>
+                <div class="social-links">
+                <!-- GitHub -->
+                <a href="https://github.com/itszaaak" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/zakkariaerrouman/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+
+                <!-- YouTube -->
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://tiktok.com/@votre-compte" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://facebook.com/votre-page" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Itszaaak</p>
+                <p class="built-with">Tous droits réservés.</p>
             </div>
         </div>
     </footer>
-    <script src="/js/scrip.js"></script>
+
+    <!-- Fichier de script relatif -->
+    <script src="/js/script.js"></script>
 </body>
 </html>
