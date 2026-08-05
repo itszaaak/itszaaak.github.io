@@ -194,5 +194,13 @@ env.<span class="function">deploy</span>(); <span class="comment">// Prêt pour 
 
     <!-- Fichier de script relatif -->
     <script src="/js/script.js"></script>
+    <script>
+document.querySelectorAll('*').forEach(el => {
+  if (el.getBoundingClientRect().right > window.innerWidth) {
+    el.style.outline = '3px solid red';
+    console.log('DÉBORDE:', el, el.getBoundingClientRect().right, 'vs viewport', window.innerWidth);
+  }
+});
+</script>
 </body>
 </html>
