@@ -191,7 +191,12 @@ ul {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 4rem;
-    padding-top: 5rem; 
+    padding-top: 5rem;
+    min-width: 0;
+}
+
+.hero > * {
+    min-width: 0;
 }
 
 .hero-title {
@@ -234,6 +239,8 @@ ul {
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.08);
+    min-width: 0;
+    max-width: 100%;
 }
 
 .code-header {
@@ -258,12 +265,18 @@ ul {
     padding: 1.5rem;
     overflow-x: auto;
     text-align: left;
+    min-width: 0;
+    max-width: 100%;
 }
 
 .code-body pre {
     font-family: 'Courier New', Courier, monospace;
     font-size: var(--text-sm);
     line-height: 1.5;
+    min-width: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .comment { color: #a1a1aa; }
@@ -287,6 +300,7 @@ ul {
     transition: var(--transition-fast);
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .project-card:hover {
@@ -344,6 +358,11 @@ ul {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    min-width: 0;
+}
+
+.about-grid > * {
+    min-width: 0;
 }
 
 .about-text p {
@@ -445,7 +464,7 @@ ul {
 @media (max-width: 64em) {
     .hero {
         grid-template-columns: 1fr;
-        
+        text-align: center;
         padding-top: 8rem;
     }
     .section-container {
@@ -463,7 +482,6 @@ ul {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
-        text-align: center;
     }
 
     .skills-container {
@@ -517,19 +535,12 @@ ul {
         transform: translateY(-0.45rem) rotate(-45deg);
     }
 
-    .code-window {
-        max-width: 100%;
-        width: 100%;
-    }
-
     .code-body {
         padding: 1rem;
     }
 
     .code-body pre {
         font-size: var(--text-xs);
-        white-space: pre-wrap;
-        word-break: break-word;
     }
 
     .footer-bottom {
