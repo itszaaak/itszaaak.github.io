@@ -445,11 +445,12 @@ ul {
 @media (max-width: 64em) {
     .hero {
         grid-template-columns: 1fr;
-        text-align: center;
+        
         padding-top: 8rem;
     }
     .section-container {
         padding: 3rem 0;
+        width: 92%;
     }
     .hero-subtitle {
         margin: 0 auto 2.5rem;
@@ -461,10 +462,22 @@ ul {
 
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .skills-container {
+        align-items: center;
+    }
+
+    .skill-item {
+        width: 100%;
+        max-width: 24rem;
+        text-align: center;
     }
 }
 
-/* Mobile */
+/* Tablette portrait */
 @media (max-width: 48em) {
     .hamburger {
         display: flex;
@@ -504,8 +517,100 @@ ul {
         transform: translateY(-0.45rem) rotate(-45deg);
     }
 
+    .code-window {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .code-body {
+        padding: 1rem;
+    }
+
+    .code-body pre {
+        font-size: var(--text-xs);
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+/* Mobile (iPhone standard, portrait) */
+@media (max-width: 30em) {
+    :root {
+        --text-xxl: clamp(2rem, 8vw, 3rem);
+    }
+
+    .section-container,
+    .nav-container {
+        width: 100%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .hero {
+        width: 100%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        gap: 2.5rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .code-header {
+        padding: 0.6rem 0.85rem;
+    }
+
+    .code-body {
+        padding: 0.85rem;
+    }
+
+    .code-body pre {
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .skill-item {
+        max-width: 100%;
+    }
+
+    .footer-container {
+        width: 100%;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+/* iPhone très petit (SE et similaires) */
+@media (max-width: 23.5em) {
+    .hero-title {
+        letter-spacing: -0.03em;
+    }
+
+    .code-body pre {
+        font-size: 0.625rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.1rem;
     }
 }
